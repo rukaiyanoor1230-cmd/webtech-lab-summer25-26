@@ -1,80 +1,69 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pental Shop</title>
- 
-
+    <title>Student Information Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
- 
+
 <body>
- 
-<h1>Welcome to Pental Shop</h1>
- 
-<div class="instruction">
-    <h3>Instruction</h3>
-    <ol>
-        <li>Complete the task</li>
-        <li>After completion, push the code into the GitHub repository.</li>
-    </ol>
-</div>
- 
-<h2>About This Lab</h2>
- 
-<p>
-    In this lab, you will learn basic HTML structure, formatting text,
-    creating simple tables, and using forms for input.
-</p>
- 
-<table>
-    <tr>
-        <th>Item Name</th>
-        <th>Quantity</th>
-        <th>Status</th>
-    </tr>
-    <tr>
-        <td>Pencils</td>
-        <td>100</td>
-        <td>In Stock</td>
-    </tr>
-    <tr>
-        <td>Notebooks</td>
-        <td>50</td>
-        <td>Low Stock</td>
-    </tr>
-    <tr>
-        <td>Markers</td>
-        <td>15</td>
-        <td>In Stock</td>
-    </tr>
-</table>
- 
-<div class="contact-box">
-    <h2>Contact Information</h2>
- 
-    <form>
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" name="name">
-        </div>
- 
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email">
-        </div>
- 
-        <div class="form-group">
-            <label>Message</label>
-            <textarea name="message"></textarea>
-        </div>
- 
-        <button type="submit">Submit</button>
-    </form>
-</div>
- 
+
+<form>
+    <fieldset>
+        <legend>Student Information</legend>
+
+        <table cellpadding="10">
+            <tr>
+                <td><label>Full Name (Text)</label></td>
+                <td><label>Email Address</label></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="text" placeholder="Enter your full name">
+                </td>
+                <td>
+                    <input type="email" placeholder="your@email.com">
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Password</label></td>
+                <td><label>Age (Number)</label></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="password" placeholder="Password">
+                </td>
+                <td>
+                    <input type="number" placeholder="Age">
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Experiment Date</label></td>
+                <td><label>Phone Number</label></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="date">
+                </td>
+                <td>
+                    <input type="tel" placeholder="+880XXXXXXXXXX">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit">SUBMIT</button>
+                    <button type="reset">CLEAR</button>
+                </td>
+            </tr>
+        </table>
+
+    </fieldset>
+</form>
+
 </body>
 </html>
- 
