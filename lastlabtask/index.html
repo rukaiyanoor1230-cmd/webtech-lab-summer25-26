@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration</title>
+
+<style>
+body{
+    background:#eef;
+    display:flex;
+    justify-content:center;
+    font-family:Arial;
+}
+.box{
+    background:#fff;
+    width:400px;
+    padding:20px;
+    margin-top:30px;
+}
+label{
+    font-weight:bold;
+}
+span{
+    color:red;
+}
+input,select{
+    width:100%;
+    padding:6px;
+    margin:5px 0;
+}
+button{
+    display:block;
+    margin:10px auto;
+    padding:8px 20px;
+}
+table{
+    width:100%;
+    margin-top:15px;
+    border-collapse:collapse;
+}
+table,th,td{
+    border:1px solid black;
+    text-align:center;
+    padding:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Student Registration</h2>
+
+<form id="f">
+
+<label>First Name <span>*</span></label>
+<input id="fn">
+
+<label>Last Name <span>*</span></label>
+<input id="ln">
+
+<label>Student ID <span>*</span></label>
+<input id="id">
+
+<label>Email <span>*</span></label>
+<input id="email">
+
+<label>Credit <span>*</span></label>
+<input type="number" id="credit">
+
+<label>Department <span>*</span></label>
+<select id="dept">
+    <option value="">Select</option>
+    <option>CSE</option>
+    <option>EEE</option>
+    <option>BBA</option>
+</select>
+
+<button>Submit</button>
+
+</form>
+
+<table id="table"></table>
+
+</div>
+
+<script>
+
+f.onsubmit=function(e){
+
+e.preventDefault();
+
+let fname=fn.value;
+let lname=ln.value;
+let sid=id.value;
+let mail=email.value;
+let cr=credit.value;
+let dep=dept.value;
+
+if(fname=="" || lname==""){
+    alert("Name required");
+    return;
+}
+
+if(!sid.includes("-")){
+    alert("ID must contain -");
+    return;
+}
+
+if(!mail.includes("@student.aiub.edu")){
+    alert("Invalid Email");
+    return;
+}
+
+if(cr<0 || cr>=148){
+    alert("Credit must be between 0 and 147");
+    return;
+}
+
+if(dep==""){
+    alert("Select Department");
+    return;
+}
+
+if(table.innerHTML==""){
+table.innerHTML=`
+<tr>
+<th>Name</th>
+<th>ID</th>
+<th>Email</th>
+<th>Credit</th>
+<th>Dept</th>
+</tr>`;
+}
+
+table.innerHTML+=`
+<tr>
+<td>${fname} ${lname}</td>
+<td>${sid}</td>
+<td>${mail}</td>
+<td>${cr}</td>
+<td>${dep}</td>
+</tr>`;
+
+f.reset();
+
+}
+
+</script>
+
+</body>
+</html>
